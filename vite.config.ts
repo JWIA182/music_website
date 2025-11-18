@@ -6,9 +6,10 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, (process as any).cwd(), '');
   return {
     plugins: [react()],
-    base: '/music_website/', // Your repository name
+    base: '/music_website/', // Must match your GitHub repository name
     define: {
-      'process.env.API_KEY': JSON.stringify(env.API_KEY)
+      // Safely stringify the key, falling back to empty string to prevent crash
+      'process.env.API_KEY': JSON.stringify(env.API_KEY || '')
     }
   }
 })

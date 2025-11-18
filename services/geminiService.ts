@@ -1,11 +1,7 @@
 import { GoogleGenAI, Chat } from "@google/genai";
 import { PRODUCER_NAME, SERVICES, PROJECTS, GEAR_LIST } from "../constants";
 
-// Initialize the client
-// Note: In a real production app, you might want to handle this initialization 
-// inside a context or effect to ensure the key is present.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
+// System instruction for the AI
 const systemInstruction = `
 You are the virtual studio assistant for ${PRODUCER_NAME}, a professional music producer and mixing engineer.
 Your goal is to answer visitor questions about Alex's services, experience, gear, and pricing in a professional, creative, and helpful tone.
@@ -24,8 +20,13 @@ If asked to listen to a demo, say "Alex would love to hear it! Please submit lin
 
 let chatSession: Chat | null = null;
 
+// Initialize chat lazily
 export const initializeChat = async (): Promise<Chat> => {
   if (chatSession) return chatSession;
+
+  // Initialize the client here instead of at the top level
+  // This prevents the entire website from crashing if the API key is missing on load
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
   try {
     chatSession = ai.chats.create({
@@ -43,8 +44,9 @@ export const initializeChat = async (): Promise<Chat> => {
 };
 
 export const sendMessageToGemini = async (message: string): Promise<string> => {
+  // Check if key exists before attempting connection
   if (!process.env.API_KEY) {
-    return "I'm currently offline (API Key missing). Please try the contact form instead!";
+    return "I'm currently offline (API Key missing in configuration). Please try the contact form instead!";
   }
 
   try {
