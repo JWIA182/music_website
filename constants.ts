@@ -1,7 +1,7 @@
 import { GearItem, Project, Service, NavItem } from './types';
 import { Sliders, Music, Mic2, Scissors } from 'lucide-react';
 
-export const PRODUCER_NAME = "Alex Waves";
+export const PRODUCER_NAME = "Jakub Wiaderek";
 export const TAGLINE = "Sculpting Sound. Defining Emotion.";
 
 export const NAV_ITEMS: NavItem[] = [
@@ -104,5 +104,5 @@ export const GEAR_LIST: GearItem[] = [
 export const SOCIAL_LINKS = {
   instagram: "https://instagram.com",
   spotify: "https://spotify.com",
-  email: "contact@alexwavesaudio.com"
+  email: "contact@jakubwiaderek.com"
 };

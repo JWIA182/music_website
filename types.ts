@@ -22,18 +22,6 @@ export interface GearItem {
   items: string[];
 }
 
-export enum Sender {
-  User = 'user',
-  Bot = 'bot'
-}
-
-export interface ChatMessage {
-  id: string;
-  text: string;
-  sender: Sender;
-  timestamp: Date;
-}
-
 export interface NavItem {
   label: string;
   href: string;

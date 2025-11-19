@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import Services from './components/Services';
 import Contact from './components/Contact';
-import ChatAssistant from './components/ChatAssistant';
 
 const App: React.FC = () => {
   return (
@@ -16,7 +15,6 @@ const App: React.FC = () => {
         <Services />
         <Contact />
       </main>
-      <ChatAssistant />
     </div>
   );
 };

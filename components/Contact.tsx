@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
                 <div className="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center border border-slate-800 group-hover:border-accent">
                   <Instagram className="w-5 h-5" />
                 </div>
-                <span className="text-lg">@alexwaves_audio</span>
+                <span className="text-lg">@jakubwiaderek_audio</span>
               </a>
                <a href={SOCIAL_LINKS.spotify} target="_blank" rel="noreferrer" className="flex items-center gap-4 text-slate-300 hover:text-accent transition-colors group">
                 <div className="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center border border-slate-800 group-hover:border-accent">
@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="mt-20 pt-8 border-t border-slate-800 text-center text-slate-600 text-sm">
-          <p>&copy; {new Date().getFullYear()} Alex Waves Audio. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Jakub Wiaderek Audio. All rights reserved.</p>
         </div>
       </div>
     </section>
